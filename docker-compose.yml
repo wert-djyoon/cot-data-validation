@@ -1,10 +1,13 @@
 services:
   main:
+    image: patent_valuation
     build:
       context: .
-    container_name: cot_training_environment
+    container_name: patent_valuation
+    hostname: container
     command: sleep infinity
     volumes:
+      - ./src:/app/src
       - ./data:/app/data
       - ./output:/app/output
     deploy:
